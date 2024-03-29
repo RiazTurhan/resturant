@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin-top: 50px;
+        }
+        input[type="number"], select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form method = 'POST'> 
+        {% csrf_token %}
+        <input type="text" name='n1' placeholder="Enter number 1" value='{{ n1 }}' required>
+        <select id="operator"  name= 'operator' required>
+            <option value="">{{ opr }}</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name='n2' value='{{ n2 }}' placeholder="Enter number 2" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="result">{{ result }}</div>
+</body>
+</html>
