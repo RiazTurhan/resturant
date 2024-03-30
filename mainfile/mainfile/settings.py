@@ -16,6 +16,10 @@ from pathlib import Path , os
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# URL prefix for media files
+MEDIA_URL = '/media/'
 
 
 
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
     'menu',
     'page_sec',
     'serv',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
